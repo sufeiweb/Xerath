@@ -11,6 +11,7 @@ var citys = require('./routes/citys');
 var techs = require('./routes/techs');
 var components = require('./routes/components');
 var notes = require('./routes/notes');
+var diarys = require('./routes/diarys');
 
 //加载ueditor 模块
 var ueditor = require("ueditor");
@@ -36,7 +37,7 @@ var session=require('express-session');
 app.use(session({
     secret:'Xerath2018',               //设置 session 签名
     name:'Xerath',
-    cookie:{maxAge:60*1000*60}, // 储存的时间 1小时
+    cookie:{maxAge:60*1000*60*12}, // 储存的时间 1小时
     resave:false,             // 每次请求都重新设置session
     saveUninitialized:true
 }));
@@ -69,6 +70,7 @@ app.use('/citys', citys);
 app.use('/techs', techs);
 app.use('/components', components);
 app.use('/notes', notes);
+app.use('/diarys', diarys);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

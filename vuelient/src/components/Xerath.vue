@@ -30,26 +30,32 @@
         </li>
         <li>
           <router-link to="/Xerath/noteMain">
-            <i class="fa fa-file-text-o" aria-hidden="true"></i>
-            <span>笔记</span>
+            <i class="fa fa-file-code-o" aria-hidden="true"></i>
+            <span>随笔</span>
           </router-link>
         </li>
         <li>
-          <router-link to="/Xerath/technical">
+          <router-link to="/Xerath/techList">
             <i class="fa fa-hdd-o" aria-hidden="true"></i>
-            <span>技术点</span>
+            <span>技术</span>
           </router-link>
         </li>
         <li>
-          <router-link to="/Xerath/component">
+          <router-link to="/Xerath/cpList">
             <i class="fa fa-microchip" aria-hidden="true"></i>
             <span>组件</span>
           </router-link>
         </li>
         <li>
-          <router-link to="/Xerath/project">
+          <router-link to="/Xerath/pjList">
             <i class="fa fa-briefcase" aria-hidden="true"></i>
             <span>项目</span>
+          </router-link>
+        </li>
+        <li>
+          <router-link to="/Xerath/diaryList">
+            <i class="fa fa-file-word-o" aria-hidden="true"></i>
+            <span>日记</span>
           </router-link>
         </li>
         <li>
@@ -86,14 +92,16 @@
     admin:"开发人员",
     component:"组件",
     project:"项目",
-    technical:"技术点",
+    technical:"技术",
     tourism:"旅游",
-    techDetail:'技术点详情',
-    editTech:'编辑技术点',
+    techDetail:'技术详情',
+    editTech:'编辑技术',
     editComponent:'编辑组件',
-    noteMain:'笔记',
-    noteEdit:'编辑笔记',
-    noteDetail:'笔记详情'
+    noteMain:'随笔',
+    noteEdit:'编辑随笔',
+    noteDetail:'随笔详情',
+    diaryList:'日记',
+    diaryEdit:'编辑日记'
   };
 
   export default {

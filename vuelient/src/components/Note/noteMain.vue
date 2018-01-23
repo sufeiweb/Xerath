@@ -24,8 +24,8 @@
           <span>创建时间：</span>
           <span>{{item.createDate | dateHIS}}</span>
         </p>
-
-        <section>
+        <section class='buttonBox'>
+          <button class="mybutton" @click="viewUpdate(item._id)">编辑</button>
           <button class="mybutton" @click="viewDetail(item._id)">详情</button>
         </section>
       </div>
@@ -64,7 +64,7 @@
         }).then((result)=>{
           //成功
           this.codeData = result.data.data;
-          this.pageInfo.allpage = Math.ceil( result.data.total/10 );
+          this.pageInfo.allpage = Math.ceil( result.data.total/20 );
         }).catch( (error)=> {
           //失败
           console.log(error)
@@ -72,6 +72,9 @@
       },
       viewDetail(id){
         this.$router.push({path:'/Xerath/noteDetail',query:{id:id}})
+      },
+      viewUpdate(id){
+        this.$router.push({path:'/Xerath/noteEdit',query:{id:id}})
       },
       addComponent(){
         //添加组件
@@ -118,7 +121,7 @@
       flex-wrap: wrap;
       padding-top: 20px;
       >div{
-        width: 250px;
+        width: 415px;
         height: 140px;
         margin-bottom: 20px;
         border:2px solid #fff;
@@ -144,6 +147,13 @@
       .codeTrue{
         padding: 20px;
         position: relative;
+        .buttonBox{
+          button{
+            &:nth-of-type(1){
+              margin-right:20px;
+            }
+          }
+        }
         .codeTrueIcon{
           position: absolute;
           display: none;

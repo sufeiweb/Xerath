@@ -50,7 +50,6 @@
     },
     mounted:function(){
       this.getAdminList(1);
-
     },
     methods:{
       getAdminList(page){
@@ -107,9 +106,6 @@
           //失败
           console.log(error)
         });
-
-
-
       },
       cancelEditAdmin(){
         this.editAdminObj = null;

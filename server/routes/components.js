@@ -7,7 +7,7 @@ var ObjectId = require('mongodb').ObjectId;
 router.post('/ComponentList',function (req,res,next) {
     req.route.path = "/page"; //修改path来设定 对 数据库的操作
     var page = req.body.page || 1;
-    var rows = req.body.rows || 6;
+    var rows = req.body.rows || 8;
     handler(req, res, "component", [{},{limit: rows, skip:(page-1)*rows}] ,function(data,count){
         var obj = {
             data:data,
@@ -57,5 +57,29 @@ router.post('/delete', function(req, res, next) {
         }
 
     });
+});
+
+router.post('/update',function(req,res,next){
+    var selectors = [
+    	{"_id":ObjectId(req.body._id)},
+    	{"$set":{
+            CPClass:req.body.CPClass,
+            CPName:req.body.CPName,
+            CPParameter:req.body.CPParameter,
+            CPMethod:req.body.CPMethod,
+            SourceCode:req.body.SourceCode,
+    		}
+    	}
+    ];
+    handler(req, res, "component", selectors,function(data){
+		
+		//console.log(data);
+		if(data.length==0){
+			res.end('{"err":"抱歉，修改失败"}');
+		}else{
+			res.end('{"success":"修改成功"}');
+		}
+		
+	});
 });
 module.exports = router;

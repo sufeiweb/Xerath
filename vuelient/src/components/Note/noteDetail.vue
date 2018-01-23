@@ -12,6 +12,7 @@
       </section>
       <section class="buttonfooter">
         <button class="mybutton" @click="goBack">返回</button>
+        <button class="mybutton" @click="update">编辑</button>
       </section>
     </div>
   </div>
@@ -32,6 +33,9 @@
     methods:{
       goBack(){
         this.$router.go(-1)
+      },
+      update(){
+        this.$router.push({path:'/Xerath/noteEdit',query:{id:this.$route.query.id}})
       }
     },
     mounted(){
