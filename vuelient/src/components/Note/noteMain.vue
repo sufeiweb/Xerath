@@ -1,5 +1,16 @@
 <template>
   <div class="noteMainBox">
+    <div>
+      <el-select v-model="selectValue" clearable placeholder="请选择">
+        <el-option
+          v-for="item in options"
+          :key="item.value"
+          :label="item.label"
+          :value="item.value">
+        </el-option>
+      </el-select>
+      <el-button size="medium" type="primary" @click="searchselect">搜索</el-button>
+    </div>
     <div class="noteMain">
       <div class="codeTrue" v-for="item in codeData">
         <i class="fa fa-trash codeTrueIcon" @click="DELItem(item._id)"></i>
@@ -44,11 +55,25 @@
         codeData:[
           {CPClass:'vue',CPName:'分页',createDate:1514566696666,CPParameter:'pageSize,',CPMethod:'qqqqq',_id:'111111'}
         ],
+        options:[
+          {value:'Css', label:'Css'},
+          {value:'Html', label:'Html'},
+          {value:'Javascript', label:'Javascript'},
+          {value:'jQuery', label:'jQuery'},
+          {value:'Json', label:'Json'},
+          {value:'Node', label:'Node'},
+          {value:'Vue', label:'Vue'},
+          {value:'React', label:'React'},
+          {value:'Wexx', label:'Wexx'},
+          {value:'Weex', label:'Weex'},
+          {value:'Other', label:'Other'},
+          ],
         pageInfo:{
           current:1,
           showItem:10,
           allpage:5
         },
+        selectValue:''
       }
     },
     components:{
@@ -110,12 +135,41 @@
           }
         })
 
+      },
+      searchselect(){
+        if(!this.selectValue){
+          toast.message({
+            type:'error',
+            text:'请选择需要检索的类型！'
+          })
+        } else {
+          this.$http.post('/notes/search',{
+            noteClass:this.selectValue,
+            page:1
+          }).then((result)=>{
+            //成功
+            toast.message({
+              type:'success',
+              text:'检索成功！'
+            });
+            this.codeData = result.data.data;
+            this.pageInfo.allpage = Math.ceil( result.data.total/20 );
+          }).catch( (error)=> {
+            //失败
+            toast.message({
+              type:'error',
+              text:'检索失败！'
+            });
+            console.log(error)
+          });
+        }
       }
     }
   }
 </script>
 <style lang="scss" scoped>
   .noteMainBox{
+    padding-top: 20px;
     .noteMain{
       display: flex;
       flex-wrap: wrap;

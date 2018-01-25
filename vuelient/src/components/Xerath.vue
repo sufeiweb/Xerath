@@ -90,16 +90,22 @@
   var pageTitleObj = {
     home:"主页",
     admin:"开发人员",
-    component:"组件",
-    project:"项目",
-    technical:"技术",
+
+    pjList:"项目",
     tourism:"旅游",
+
+    techList:"技术",
     techDetail:'技术详情',
-    editTech:'编辑技术',
-    editComponent:'编辑组件',
+    techEdit:'编辑技术',
+
+    cpEdit:'编辑组件',
+    cpList:"组件",
+    cpDetail:'组件详情',
+
     noteMain:'随笔',
     noteEdit:'编辑随笔',
     noteDetail:'随笔详情',
+
     diaryList:'日记',
     diaryEdit:'编辑日记'
   };

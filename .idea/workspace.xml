@@ -2,34 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a019546-7751-4c97-8e4a-8267ef986140" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/io.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vuelient/src/components/ComponentDetail.vue" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vuelient/src/components/Module/editCPModule.vue" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vuelient/src/components/Module/editTechModule.vue" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vuelient/src/components/Module/ue.vue" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vuelient/src/components/component.vue" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vuelient/src/components/project.vue" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vuelient/src/components/techDetail.vue" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vuelient/src/components/technical.vue" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/app.js" afterPath="$PROJECT_DIR$/server/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/bin/www" afterPath="$PROJECT_DIR$/server/bin/www" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/node_modules/.npminstall.done" afterPath="$PROJECT_DIR$/server/node_modules/.npminstall.done" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/package.json" afterPath="$PROJECT_DIR$/server/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/routes/components.js" afterPath="$PROJECT_DIR$/server/routes/components.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/routes/notes.js" afterPath="$PROJECT_DIR$/server/routes/notes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/routes/techs.js" afterPath="$PROJECT_DIR$/server/routes/techs.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vuelient/.babelrc" afterPath="$PROJECT_DIR$/vuelient/.babelrc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vuelient/index.html" afterPath="$PROJECT_DIR$/vuelient/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vuelient/package.json" afterPath="$PROJECT_DIR$/vuelient/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vuelient/src/components/Note/noteDetail.vue" afterPath="$PROJECT_DIR$/vuelient/src/components/Note/noteDetail.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vuelient/src/components/Note/noteEdit.vue" afterPath="$PROJECT_DIR$/vuelient/src/components/Note/noteEdit.vue" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vuelient/src/components/Note/noteMain.vue" afterPath="$PROJECT_DIR$/vuelient/src/components/Note/noteMain.vue" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vuelient/src/components/Xerath.vue" afterPath="$PROJECT_DIR$/vuelient/src/components/Xerath.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vuelient/src/components/admin.vue" afterPath="$PROJECT_DIR$/vuelient/src/components/admin.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vuelient/src/main.js" afterPath="$PROJECT_DIR$/vuelient/src/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vuelient/src/router/index.js" afterPath="$PROJECT_DIR$/vuelient/src/router/index.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -43,14 +19,62 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="admin.vue" pinned="false" current-in-tab="true">
+      <file leaf-file-name="admin.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vuelient/src/components/admin.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="160" column="0" lean-forward="false" selection-start-line="160" selection-start-column="0" selection-end-line="160" selection-end-column="0" />
+            <state relative-caret-position="3552">
+              <caret line="168" column="8" lean-forward="false" selection-start-line="168" selection-start-column="8" selection-end-line="168" selection-end-column="8" />
               <folding>
                 <element signature="e#1080#1186#0" expanded="false" />
                 <element signature="e#1274#1512#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="noteMain.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vuelient/src/components/Note/noteMain.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2976">
+              <caret line="160" column="24" lean-forward="false" selection-start-line="160" selection-start-column="24" selection-end-line="160" selection-end-column="24" />
+              <folding>
+                <element signature="e#3255#3333#0" expanded="false" />
+                <element signature="e#3355#3431#0" expanded="false" />
+                <element signature="e#3453#3531#0" expanded="false" />
+                <element signature="e#3552#3635#0" expanded="false" />
+                <element signature="e#3654#4334#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Xerath.vue" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/vuelient/src/components/Xerath.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="24">
+              <caret line="129" column="38" lean-forward="false" selection-start-line="129" selection-start-column="38" selection-end-line="129" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="notes.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/routes/notes.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="576">
+              <caret line="24" column="35" lean-forward="false" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vuelient/src/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="816">
+              <caret line="38" column="25" lean-forward="false" selection-start-line="38" selection-start-column="25" selection-end-line="38" selection-end-column="25" />
+              <folding>
+                <element signature="e#140#161#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -153,8 +177,6 @@
         <option value="$PROJECT_DIR$/vuelient/src/components/Note/nodeEdit.vue" />
         <option value="$PROJECT_DIR$/vuelient/src/components/Note/nodeDetail.vue" />
         <option value="$PROJECT_DIR$/vuelient/src/router/index.js" />
-        <option value="$PROJECT_DIR$/vuelient/src/components/Xerath.vue" />
-        <option value="$PROJECT_DIR$/server/routes/notes.js" />
         <option value="$PROJECT_DIR$/vuelient/src/components/Note/noteDetail.vue" />
         <option value="$PROJECT_DIR$/server/app.js" />
         <option value="$PROJECT_DIR$/vuelient/static/UE/ueditor.config.js" />
@@ -163,7 +185,6 @@
         <option value="$PROJECT_DIR$/vuelient/src/components/technical.vue" />
         <option value="$PROJECT_DIR$/vuelient/static/css/base.css" />
         <option value="$PROJECT_DIR$/vuelient/src/components/Note/noteEdit.vue" />
-        <option value="$PROJECT_DIR$/vuelient/src/components/Note/noteMain.vue" />
         <option value="$PROJECT_DIR$/vuelient/src/components/login.vue" />
         <option value="$PROJECT_DIR$/server/bin/www" />
         <option value="$PROJECT_DIR$/vuelient/index.html" />
@@ -172,6 +193,9 @@
         <option value="$PROJECT_DIR$/server/io.js" />
         <option value="$PROJECT_DIR$/vuelient/src/components/component.vue" />
         <option value="$PROJECT_DIR$/server/routes/answers.js" />
+        <option value="$PROJECT_DIR$/server/routes/notes.js" />
+        <option value="$PROJECT_DIR$/vuelient/src/components/Note/noteMain.vue" />
+        <option value="$PROJECT_DIR$/vuelient/src/components/Xerath.vue" />
       </list>
     </option>
   </component>
@@ -192,11 +216,11 @@
     <handled-path value="$PROJECT_DIR$/server/node_modules" />
     <handled-path value="$PROJECT_DIR$/vuelient/node_modules" />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="100" />
-    <option name="y" value="-1050" />
-    <option name="width" value="1575" />
-    <option name="height" value="930" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="82" />
+    <option name="y" value="23" />
+    <option name="width" value="1440" />
+    <option name="height" value="833" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -229,7 +253,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -272,10 +295,19 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Xerath" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Xerath" type="462c0819:PsiDirectoryNode" />
+              <item name="vuelient" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Note" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -324,12 +356,13 @@
       <workItem from="1513935416159" duration="70875000" />
       <workItem from="1514342801342" duration="5294000" />
       <workItem from="1514426976478" duration="12000" />
-      <workItem from="1516420293271" duration="6113000" />
+      <workItem from="1516420293271" duration="10194000" />
+      <workItem from="1516847931499" duration="503000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86284000" />
+    <option name="totallyTimeSpent" value="90868000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -341,19 +374,18 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="100" y="-1050" width="1575" height="930" extended-state="0" />
-    <editor active="true" />
+    <frame x="82" y="23" width="1440" height="833" extended-state="1" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21135029" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23175965" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15840387" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32882273" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1414914" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15665236" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3274559" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -500,7 +532,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3685">
           <caret line="25" column="58" lean-forward="false" selection-start-line="25" selection-start-column="50" selection-end-line="25" selection-end-column="58" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -521,13 +552,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vuelient/src/components/Module/editCPModule.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="754">
-          <caret line="38" column="20" lean-forward="false" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/vuelient/src/components/Module/editCPModule.vue" />
     <entry file="file://$PROJECT_DIR$/server/routes/techs.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
@@ -556,21 +581,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vuelient/src/components/ComponentDetail.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="618">
-          <caret line="49" column="32" lean-forward="false" selection-start-line="49" selection-start-column="32" selection-end-line="49" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vuelient/src/components/Xerath.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-67">
-          <caret line="95" column="20" lean-forward="false" selection-start-line="95" selection-start-column="20" selection-end-line="95" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/vuelient/src/components/ComponentDetail.vue" />
     <entry file="file://$PROJECT_DIR$/vuelient/src/components/tourism.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="634">
@@ -578,25 +589,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vuelient/src/components/techDetail.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="8" column="14" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vuelient/src/components/project.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="1" column="7" lean-forward="false" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/vuelient/src/components/techDetail.vue" />
+    <entry file="file://$PROJECT_DIR$/vuelient/src/components/project.vue" />
     <entry file="file://$PROJECT_DIR$/vuelient/src/components/pagebar.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2544">
           <caret line="106" column="29" lean-forward="false" selection-start-line="106" selection-start-column="29" selection-end-line="106" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -607,13 +605,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vuelient/src/components/Module/editTechModule.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="7" column="34" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/vuelient/src/components/Module/editTechModule.vue" />
     <entry file="file://$PROJECT_DIR$/vuelient/src/components/Note/noteEdit.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="384">
@@ -628,21 +620,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vuelient/src/components/Module/ue.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="2" column="22" lean-forward="false" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vuelient/src/components/Note/noteMain.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1152">
-          <caret line="48" column="21" lean-forward="false" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/vuelient/src/components/Module/ue.vue" />
     <entry file="file://$PROJECT_DIR$/vuelient/src/components/login.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
@@ -654,13 +632,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vuelient/src/components/technical.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="62" column="18" lean-forward="false" selection-start-line="62" selection-start-column="18" selection-end-line="62" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/vuelient/src/components/technical.vue" />
     <entry file="file://$PROJECT_DIR$/server/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -690,6 +662,69 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/server/bin/www">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="984">
+          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vuelient/src/components/component.vue" />
+    <entry file="file://$PROJECT_DIR$/server/routes/answers.js" />
+    <entry file="file://$PROJECT_DIR$/server/routes/components.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="696">
+          <caret line="29" column="42" lean-forward="true" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/io.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vuelient/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="17" column="7" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vuelient/src/components/admin.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3552">
+          <caret line="168" column="8" lean-forward="false" selection-start-line="168" selection-start-column="8" selection-end-line="168" selection-end-column="8" />
+          <folding>
+            <element signature="e#1080#1186#0" expanded="false" />
+            <element signature="e#1274#1512#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vuelient/src/components/Note/noteMain.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2976">
+          <caret line="160" column="24" lean-forward="false" selection-start-line="160" selection-start-column="24" selection-end-line="160" selection-end-column="24" />
+          <folding>
+            <element signature="e#3255#3333#0" expanded="false" />
+            <element signature="e#3355#3431#0" expanded="false" />
+            <element signature="e#3453#3531#0" expanded="false" />
+            <element signature="e#3552#3635#0" expanded="false" />
+            <element signature="e#3654#4334#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes/notes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="24" column="35" lean-forward="false" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/vuelient/src/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="816">
@@ -700,63 +735,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/bin/www">
+    <entry file="file://$PROJECT_DIR$/vuelient/src/components/Xerath.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="984">
-          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+        <state relative-caret-position="24">
+          <caret line="129" column="38" lean-forward="false" selection-start-line="129" selection-start-column="38" selection-end-line="129" selection-end-column="38" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vuelient/src/components/component.vue" />
-    <entry file="file://$PROJECT_DIR$/server/routes/answers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="15" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/routes/notes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="51" column="30" lean-forward="true" selection-start-line="51" selection-start-column="30" selection-end-line="51" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/routes/components.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="696">
-          <caret line="29" column="42" lean-forward="true" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/io.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vuelient/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="17" column="7" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vuelient/src/components/admin.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="160" column="0" lean-forward="false" selection-start-line="160" selection-start-column="0" selection-end-line="160" selection-end-column="0" />
-          <folding>
-            <element signature="e#1080#1186#0" expanded="false" />
-            <element signature="e#1274#1512#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>

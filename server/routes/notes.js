@@ -18,6 +18,21 @@ router.post('/noteList',function (req,res,next) {
         res.end(str);
     });
 })
+// 筛选
+router.post('/search',function (req,res,next) {
+    req.route.path = "/page"; //修改path来设定 对 数据库的操作
+    var page = req.body.page || 1;
+    var rows = req.body.rows || 20;
+    handler(req, res, "note", [{'noteClass':req.body.noteClass},{limit: rows, skip:(page-1)*rows}] ,function(data,count){
+        var obj = {
+            data:data,
+            total:count,
+            success:"成功"
+        };
+        var str = JSON.stringify(obj);
+        res.end(str);
+    });
+})
 //添加
 router.post('/add', function(req, res, next) {
     var date = new Date();
