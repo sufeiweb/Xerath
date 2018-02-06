@@ -92,6 +92,7 @@
     admin:"开发人员",
 
     pjList:"项目",
+    logistics:'小程序项目物流接口',
     tourism:"旅游",
 
     techList:"技术",

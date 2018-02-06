@@ -24,8 +24,8 @@ import md5 from 'js-md5';
     name: 'backlogin',
     data () {
       return {
-        username:"",/*TODO:先预存测试值，以免手动输入*/
-        password:"",
+        username:"Xerath",/*TODO:先预存测试值，以免手动输入*/
+        password:"sufei2017",
         disablebtn:false,
         loginText:"登录"
       }

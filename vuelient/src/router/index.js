@@ -10,6 +10,7 @@ import admin from '@/components/admin'
 import tourism from '@/components/tourism'
 
 import pjList from '@/components/project/pjList'
+import logistics from '@/components/project/eCommerce/logistics';//小程序项目物流接口编辑
 
 import techList from '@/components/Tech/techList'
 import techDetail from '@/components/Tech/techDetail'
@@ -40,6 +41,7 @@ export default new Router({
       component: Xerath,
       children:[
         {path: 'pjList', component: pjList},//项目
+        {path: 'logistics', component: logistics},//小程序项目物流接口
 
         {path: 'techList', component: techList},//技术点
         {path: 'techDetail', component: techDetail},//技术点详情
