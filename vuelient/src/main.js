@@ -55,11 +55,11 @@ Object.keys(filter).forEach(key => Vue.filter(key, filter[key]));
 
 Vue.config.productionTip = false;
 
-let socket  = io.connect($API_BASE);
-socket.on('news',function (data) {
-  console.log(data);
-  socket.emit('my other event',{my:'data'})
-});
+// let socket  = io.connect($API_BASE);
+// socket.on('news',function (data) {
+//   console.log(data);
+//   socket.emit('my other event',{my:'data'})
+// });
 
 
 /* eslint-disable no-new */
