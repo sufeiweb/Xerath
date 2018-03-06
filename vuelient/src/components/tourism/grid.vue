@@ -120,7 +120,7 @@
 
   **/
 
-  import pagebar from './pagebar.vue'
+  import pagebar from '../pagebar.vue'
   export default {
     name: 'grid',
     data () {

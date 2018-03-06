@@ -32,7 +32,7 @@
       keyname:"phone"
     }
   ];
-  import grid from './grid.vue'
+  import grid from './tourism/grid.vue'
   export default {
     name: 'adminList',
     data () {

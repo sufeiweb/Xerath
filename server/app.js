@@ -13,6 +13,8 @@ var components = require('./routes/components');
 var notes = require('./routes/notes');
 var diarys = require('./routes/diarys');
 var wexx = require('./routes/wexx');
+var projects = require('./routes/projects');
+var backlogs = require('./routes/backlogs');
 
 //加载ueditor 模块
 var ueditor = require("ueditor");
@@ -73,6 +75,8 @@ app.use('/components', components);
 app.use('/notes', notes);
 app.use('/diarys', diarys);
 app.use('/wexx', wexx);
+app.use('/projects', projects);
+app.use('/backlogs', backlogs);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -1,290 +1,486 @@
 <template>
-  <div class="home main">
-    <h4>最新数据</h4>
-    <ul class="number">
-      <li>
-        <div class="title">今日访问</div>
-        <p>12000</p>
-        <a href="javascript:;">查看详情<i class="fa fa-angle-right" aria-hidden="true"></i></a>
-      </li>
-      <li>
-        <div class="title">学员总数</div>
-        <p>3000000</p>
-        <a href="javascript:;">查看详情<i class="fa fa-angle-right" aria-hidden="true"></i></a>
-      </li>
-      <li>
-        <div class="title">在学人数</div>
-        <p>2000</p>
-        <a href="javascript:;">查看详情<i class="fa fa-angle-right" aria-hidden="true"></i></a>
-      </li>
-    </ul>
-    <canvas id="barChart" height="400" width="600" style="margin:10px 0"> 你的浏览器不支持HTML5 canvas </canvas>
-
+  <div class="homeMain">
+    <div class="backlog">
+      <div class="title">
+        <span>待办事项</span>
+        <span class="add" @click="changeAddStatus(1)"><i class="el-icon-edit"></i> 添加</span>
+      </div>
+      <div class="content">
+        <div class="list" v-for="item in backlogData">
+          <div class="titles" @click="viewDetail(item._id)">{{item.iptTitle}}</div>
+          <div>
+            <el-button @click="cancels(item._id)">取消</el-button>
+            <el-button @click="perform(item._id)">完成</el-button>
+            <el-button @click="remark(item._id)">备注</el-button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="backlog">
+      <div class="title">未完成</div>
+      <div class="content">
+        <div class="list" v-for="item in unfinishedData">
+          <div class="titles" @click="viewDetail(item._id)">{{item.iptTitle}}</div>
+          <div>
+            <el-button @click="cancels(item._id)">取消</el-button>
+            <el-button @click="perform(item._id)">完成</el-button>
+            <el-button @click="remark(item._id)">备注</el-button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="backlog">
+      <div class="title">已完成</div>
+      <div class="content">
+        <div class="list" v-for="item in completedData">
+          <div class="titles" @click="viewDetail(item._id)">{{item.iptTitle}}</div>
+          <div>
+            <el-button @click="remark(item._id)">备注</el-button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="backlog">
+      <div class="title">已取消</div>
+      <div class="content">
+        <div class="list" v-for="item in cancelData">
+          <div class="titles" @click="viewDetail(item._id)">{{item.iptTitle}}</div>
+          <div>
+            <el-button @click="recover(item._id)">恢复</el-button>
+            <el-button @click="remark(item._id)">备注</el-button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="editNotes" v-if="addStatus">
+      <div class="content">
+        <div class="header">
+          <section>
+            <span>开始时间:</span>
+            <el-date-picker
+              v-model="startTime"
+              type="datetime"
+              placeholder="选择日期时间">
+            </el-date-picker>
+          </section>
+          <section>
+            <span>预计结束时间:</span>
+            <el-date-picker
+              v-model="endTime"
+              type="datetime"
+              placeholder="选择日期时间">
+            </el-date-picker>
+          </section>
+        </div>
+        <div class="contents">
+          <div class="title">
+            <span>标题：</span>
+            <el-input v-model="iptTitle" placeholder="请输入标题"></el-input>
+          </div>
+          <div class="title">
+            <span>内容：</span>
+            <el-input
+              v-model="iptContent"
+              type="textarea"
+              :rows="4"
+              placeholder="请输入内容"
+            ></el-input>
+          </div>
+        </div>
+        <div class="footer">
+          <el-button @click="changeAddStatus(0)">取消</el-button>
+          <el-button type="primary" @click="addSubmit">提交</el-button>
+        </div>
+      </div>
+    </div>
+    <div class="editNotes" v-if="remarkStatus">
+      <div class="content">
+        <div class="contents">
+          <div class="title">添加备注：</div>
+          <el-input
+            v-model="iptRemark"
+            type="textarea"
+            :rows="5"
+            placeholder="请输入内容"
+          ></el-input>
+        </div>
+        <div class="footer">
+          <el-button @click="remark(0)">取消</el-button>
+          <el-button type="primary" @click="remarkSubmit">提交</el-button>
+        </div>
+      </div>
+    </div>
+    <div class="editNotes" v-if="detailStatus">
+      <div class="details">
+        <header>{{detailData.iptTitle}}</header>
+        <section>
+          <aside>
+            <span>开始时间:</span>
+            <span>{{detailData.startTime | dateYMDHIS}}</span>
+          </aside>
+          <aside>
+            <span>开始时间:</span>
+            <span>{{detailData.endTime | dateYMDHIS}}</span>
+          </aside>
+        </section>
+        <article>
+          <div class="titleD">内容：</div>
+          <div class="detailContent">
+            {{detailData.iptContent}}
+          </div>
+        </article>
+        <footer>
+          <div class="titleD">备注：</div>
+          <div class="remarkContent">
+            <div v-for="item in detailData.iptRemark" class="itemsRemark">
+              <span>{{item.content}}</span>
+              <span class="atTime">{{item.times | dateYMDHIS}}</span>
+            </div>
+          </div>
+        </footer>
+        <div class="closeD">
+          <el-button @click="goBack">退出</el-button>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-  .main{
-    border-radius: 4px;
-    background: #fff;
-    margin-top: 10px;
-    overflow: hidden;
-  }
-  .main > h4{
-    color: #51555a;
-    padding:10px;
-    border-bottom: 1px solid #DFE3EA;
-  }
-  .number{
-    width: 30%;
-    float: right;
-    margin-right: 10%;
-    margin-top: 10px;
-    color: #566A80;
-  }
-  .number li{
-    padding: 20px;
-    border-top:1px solid #F0F2F5;
-  }
-  .number li:first-child{
-    border: none 0;
-  }
-  .number p{
-    font-size: 20px;
-    font-family: arial;
-    margin: 10px 0;
-  }
-  .number a{
-    text-decoration: none;
-    color: #4187db;
-    font-size: 12px;
-  }
-  .number li:hover{
-    color: #173859;
-  }
-  .number a:hover{
-
-  }
-  .number i{
-    transition: all 0.3s ease-out;
-    padding-left: 10px;
-  }
-  .number a:hover i{
-    padding-left: 20px;
-  }
-  .number:hover li{
-    border-color:#DFE3EA
-  }
-  canvas{
-    max-width: 55%;
-    min-width: 45%;
-  }
-</style>
-
 <script>
-
   export default {
     name: 'home',
-    data () {
+    data() {
       return {
-
+        startTime: '',//开始时间
+        endTime: '',//结束时间
+        iptTitle: '',//标题
+        iptContent: '',//内容
+        iptRemark: '',//备注
+        iptRemarkId: '',//备注id暂存
+        addStatus: false,//添加模态框状态
+        remarkStatus: false,//备注模态框状态
+        detailStatus: false,//备注模态框状态
+        backlogData: [],//待办事项数据
+        unfinishedData: [],//未完成数据
+        completedData: [],//已完成数据
+        cancelData: [],//已取消数据
+        detailData: '',//详细数据
       }
     },
-    methods:{
+    methods: {
+      changeAddStatus(num) {
+        this.endTime = null;
+        this.startTime = null;
+        this.iptTitle = null;
+        this.iptContent = null;
+        this.iptRemark = null;
+        this.addStatus = !this.addStatus;
+        if (num) {
+          this.startTime = new Date();
+        }
+      },
+      addSubmit() {
+        let data = {
+          startTime: new Date(this.startTime).getTime(),
+          endTime: new Date(this.endTime).getTime(),
+          iptTitle: this.iptTitle,
+          iptContent: this.iptContent,
+          iptRemark: this.iptRemark,
+          backlogStatus: 1,//待办事项 1，2未完成。3已完成，4已取消
+        };
+        this.$http.post('/backlogs/add', data).then(res => {
+          this.addStatus = false;
+          this.getBacklogList(1)
+          this.getBacklogList(2)
+        }).catch(req => {
+        });
+      },//提交添加
+      getBacklogList(status) {
+        this.$http.post('/backlogs/list', {backlogStatus: status}).then(res => {
+          console.log(res)
+          if (status === 1) {
+            this.backlogData = res.data;
+          }
+          if (status === 2) {
+            this.unfinishedData = res.data;
+          }
+          if (status === 3) {
+            this.completedData = res.data;
+          }
+          if (status === 4) {
+            this.cancelData = res.data;
+          }
+        }).catch(req => {
+        });
+      },
+      cancels(id) {
+        this.$http.post('/backlogs/cancels', {id: id}).then(res => {
+          toast.message({
+            type: 'success',
+            text: '操作成功'
+          });
+          this.getListAll()
+        }).catch(req => {
+          console.log(req)
+        })
+      },//取消
+      perform(id) {
+        this.$http.post('/backlogs/perform', {id: id}).then(res => {
+          toast.message({
+            type: 'success',
+            text: '操作成功'
+          });
+          this.getListAll()
+        }).catch(req => {
+          console.log(req)
+        })
+      },//完成
+      remark(id) {
+        if (id) {
+          this.remarkStatus = true;
+          this.iptRemarkId = id;
+        } else {
+          this.remarkStatus = false;
+        }
+      },//备注
+      viewDetail(id) {
+        this.detailStatus = true;
+        this.$http.post('/backlogs/detail', {id: id}).then(res => {
+          console.log(res)
+          this.detailData = res.data[0];
+        }).catch(req => {
+          console.log(req)
+        })
+      },//查看详情
+      goBack(){
+        this.detailStatus = false;
+      },
+      recover(id) {
+        this.$http.post('/backlogs/recovers', {id: id}).then(res => {
+          toast.message({
+            type: 'success',
+            text: '操作成功'
+          });
+          this.getListAll()
+        }).catch(req => {
+          console.log(req)
+        })
+      },//恢复
+      remarkSubmit() {
+        let id = this.iptRemarkId;
+        console.log(id);
+        this.$http.post('/backlogs/remarks', {id: id, iptRemark: this.iptRemark}).then(res => {
+          console.log(res)
+          toast.message({
+            type: 'success',
+            text: '操作成功'
+          });
+          this.remarkStatus = false;
+        }).catch(req => {
+          console.log(req)
+        })
+      },//提交备注
+      getListAll() {
+        this.getBacklogList(1);
+        setTimeout(this.getBacklogList(2), 1500);
+        setTimeout(this.getBacklogList(3), 1500);
+        setTimeout(this.getBacklogList(4), 1500);
+      }
     },
-    mounted:function(){
-      var chartData = [["2017/01", 50], ["2017/02", 60], ["2017/03", 100], ["2017/04",200], ["2017/05",350], ["2017/06",600]];
-      goBarChart(chartData);
-
+    mounted: function () {
+      this.getListAll();
     }
-  }
-
-  function goBarChart(dataArr){
-
-
-    // 声明所需变量
-    var canvas,ctx;
-    // 图表属性
-    var cWidth, cHeight, cMargin, cSpace;
-    var originX, originY;
-    // 折线图属性
-    var tobalDots, dotSpace, maxValue;
-    var totalYNomber;
-    // 运动相关变量
-    var ctr, numctr, speed;
-
-    // 获得canvas上下文
-    canvas = document.getElementById("barChart");
-    if(canvas && canvas.getContext){
-      ctx = canvas.getContext("2d");
-    }
-    initChart(); // 图表初始化
-    drawLineLabelMarkers(); // 绘制图表轴、标签和标记
-    drawBarAnimate(); // 绘制折线图的动画
-
-    //点击刷新图表
-    canvas.onclick = function(){
-      initChart(); // 图表初始化
-      drawLineLabelMarkers(); // 绘制图表轴、标签和标记
-      drawBarAnimate(); // 绘制折线图的动画
-    };
-
-    // 图表初始化
-    function initChart(){
-      // 图表信息
-      cMargin = 60;
-      cSpace = 80;
-      canvas.width = Math.floor( (window.innerWidth-100)/2 ) * 2 ;
-      canvas.height = 740;
-      canvas.style.height = canvas.height/2 + "px";
-      canvas.style.width = canvas.width/2 + "px";
-      cHeight = canvas.height - cMargin - cSpace;
-      cWidth = canvas.width - cMargin - cSpace;
-      originX = cMargin + cSpace;
-      originY = cMargin + cHeight;
-
-      // 折线图信息
-      tobalDots = dataArr.length;
-      dotSpace = parseInt( cWidth/tobalDots );
-      maxValue = 0;
-      for(var i=0; i<dataArr.length; i++){
-        var dotVal = parseInt( dataArr[i][1] );
-        if( dotVal > maxValue ){
-          maxValue = dotVal;
-        }
-      }
-      maxValue += 50;
-      totalYNomber = 10;
-      // 运动相关
-      ctr = 1;
-      numctr = 100;
-      speed = 6;
-
-      ctx.translate(0.5,0.5);  // 当只绘制1像素的线的时候，坐标点需要偏移，这样才能画出1像素实线
-    }
-
-    // 绘制图表轴、标签和标记
-    function drawLineLabelMarkers(){
-      ctx.font = "24px Arial";
-      ctx.lineWidth = 2;
-      ctx.fillStyle = "#566a80";
-      ctx.strokeStyle = "#566a80";
-      // y轴
-      drawLine(originX, originY, originX, cMargin);
-      // x轴
-      drawLine(originX, originY, originX+cWidth, originY);
-
-      // 绘制标记
-      drawMarkers();
-    }
-
-    // 画线的方法
-    function drawLine(x, y, X, Y){
-      ctx.beginPath();
-      ctx.moveTo(x, y);
-      ctx.lineTo(X, Y);
-      ctx.stroke();
-      ctx.closePath();
-    }
-
-    // 绘制标记
-    function drawMarkers(){
-      ctx.strokeStyle = "#E0E0E0";
-      // 绘制 y 轴 及中间横线
-      var oneVal = parseInt(maxValue/totalYNomber);
-      ctx.textAlign = "right";
-      for(var i=0; i<=totalYNomber; i++){
-        var markerVal =  i*oneVal;
-        var xMarker = originX-5;
-        var yMarker = parseInt( cHeight*(1-markerVal/maxValue) ) + cMargin;
-        //console.log(xMarker, yMarker+3,markerVal/maxValue,originY);
-        ctx.fillText(markerVal, xMarker, yMarker+3, cSpace); // 文字
-        if(i>0){
-          drawLine(originX+2, yMarker, originX+cWidth, yMarker);
-        }
-      }
-      // 绘制 x 轴 及中间竖线
-      ctx.textAlign = "center";
-      for(var i=0; i<tobalDots; i++){
-        var markerVal = dataArr[i][0];
-        var xMarker = originX+i*dotSpace;
-        var yMarker = originY+30;
-        ctx.fillText(markerVal, xMarker, yMarker, cSpace); // 文字
-        if(i>0){
-          drawLine(xMarker, originY-2, xMarker, cMargin    );
-        }
-      }
-      // 绘制标题 y
-      ctx.save();
-      ctx.rotate(-Math.PI/2);
-      ctx.fillText("访问量", -canvas.height/2, cSpace-10);
-      ctx.restore();
-      // 绘制标题 x
-      ctx.fillText("月份", originX+cWidth/2, originY+cSpace/2+20);
-    };
-
-    //绘制折线图
-    function drawBarAnimate(){
-      ctx.strokeStyle = "#566a80";  //"#49FE79";
-
-      //连线
-      ctx.beginPath();
-      for(var i=0; i<tobalDots; i++){
-        var dotVal = dataArr[i][1];
-        var barH = parseInt( cHeight*dotVal/maxValue* ctr/numctr );//
-        var y = originY - barH;
-        var x = originX + dotSpace*i;
-        if(i==0){
-          ctx.moveTo( x, y );
-        }else{
-          ctx.lineTo( x, y );
-        }
-      }
-      ctx.stroke();
-
-      //背景
-      ctx.lineTo( originX+dotSpace*(tobalDots-1), originY);
-      ctx.lineTo( originX, originY);
-      //背景渐变色
-      //柱状图渐变色
-      var gradient = ctx.createLinearGradient(0, 0, 0, 300);
-      gradient.addColorStop(0, 'rgba(133,171,212,0.6)');
-      gradient.addColorStop(1, 'rgba(133,171,212,0.1)');
-      ctx.fillStyle = gradient;
-      ctx.fill();
-      ctx.closePath();
-      ctx.fillStyle = "#566a80";
-
-      //绘制点
-      for(var i=0; i<tobalDots; i++){
-        var dotVal = dataArr[i][1];
-        var barH = parseInt( cHeight*dotVal/maxValue * ctr/numctr );
-        var y = originY - barH;
-        var x = originX + dotSpace*i;
-        drawArc( x, y );  //绘制点
-        ctx.fillText(parseInt(dotVal*ctr/numctr), x+15, y-8); // 文字
-      }
-
-      if(ctr<numctr){
-        ctr++;
-        setTimeout(function(){
-          ctx.clearRect(0,0,canvas.width, canvas.height);
-          drawLineLabelMarkers();
-          drawBarAnimate();
-        }, speed);
-      }
-    }
-
-    //绘制圆点
-    function drawArc( x, y, X, Y ){
-      ctx.beginPath();
-      ctx.arc( x, y, 3, 0, Math.PI*2 );
-      ctx.fill();
-      ctx.closePath();
-    }
-
-
   }
 
 </script>
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped lang="scss">
+  .homeMain {
+    background: #fff;
+    padding: 20px;
+    border-top: 5px solid #999;
+    .backlog {
+      margin-bottom: 20px;
+      .title {
+        border-bottom: 1px solid #666;
+        margin-bottom: 10px;
+        .add {
+          cursor: pointer;
+          color: #01aaef;
+          &:hover {
+            color: #00B7FF;
+          }
+          margin-left: 50px;
+          .el-icon-edit {
+            color: #01aaef;
+          }
+        }
+      }
+      .content {
+        height: 200px;
+        background: #f7f7f7;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 10px;
+        overflow: auto;
+        .list {
+          width: 49%;
+          height: 40px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          background: #fff;
+          margin-bottom: 10px;
+          border-radius: 4px;
+          padding-left: 10px;
+          box-sizing: border-box;
+          .titles {
+            cursor: pointer;
+            height: 100%;
+            line-height: 40px;
+            margin-right: 10px;
+          }
+          div {
+            flex: 1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            button {
+              margin: 0;
+              padding: 0;
+              height: 30px;
+              font-size: 12px;
+              line-height: 30px;
+              width: 30%;
+            }
+          }
+        }
+      }
+    }
+    .editNotes {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, .5);
+      .content {
+        background: #fff;
+        width: 50%;
+        height: 50%;
+        overflow: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        padding: 20px;
+        border-radius: 4px;
+        .header {
+          display: flex;
+          align-items: center;
+          flex-wrap: wrap;
+          border-bottom: 1px solid #ccc;
+          section {
+            flex: 1;
+            margin-bottom: 10px;
+            span {
+              margin-right: 10px;
+            }
+          }
+        }
+        .contents {
+          padding: 10px 0;
+          /*border-bottom: 1px solid #ccc;*/
+          .title {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+            span {
+              margin-bottom: 8px;
+            }
+          }
+        }
+        .footer {
+          display: flex;
+          justify-content: center;
+          button {
+            width: 40%;
+          }
+        }
+      }
+      .details {
+        background: #fff;
+        width: 50%;
+        height: 60%;
+        overflow: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        padding: 20px;
+        border-radius: 4px;
+        header {
+          text-align: center;
+          font-size: 24px;
+          font-weight: bolder;
+          margin-bottom: 20px;
+        }
+        section {
+          display: flex;
+          align-items: center;
+          margin-bottom: 20px;
+          aside {
+            flex: 1;
+            text-align: center;
+          }
+        }
+        article {
+          margin-bottom: 20px;
+          .detailContent {
+            height: 60px;
+            background: rgba(0, 0, 0, .1);
+            padding: 5px;
+            border-radius: 4px;
+            overflow: auto;
+          }
+        }
+        footer {
+          margin-bottom: 20px;
+          .remarkContent {
+            display: flex;
+            flex-direction: column;
+            background: rgba(0, 0, 0, .1);
+            height: 120px;
+            padding: 5px;
+            border-radius: 4px;
+            overflow: auto;
+            .itemsRemark {
+              background: #fff;
+              margin-bottom: 5px;
+              padding: 2px 5px;
+              border-radius: 4px;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              .atTime{
+                color: #999;
+              }
+            }
+          }
+        }
+        .closeD{
+          display: flex;
+          justify-content: center;
+            button{
+              width: 50%;
+            }
+        }
+      }
+    }
+  }
+</style>

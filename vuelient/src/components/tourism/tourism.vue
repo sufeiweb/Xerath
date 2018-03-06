@@ -171,6 +171,7 @@
       },
       detailCity(item){
         console.log(item)
+        this.$router.push({path:'/Xerath/tourismDetail',query:{id:item._id}})
       }
     }
   }

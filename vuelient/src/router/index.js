@@ -7,10 +7,12 @@ import Xerath from '@/components/Xerath'
 import home from '@/components/home'
 import admin from '@/components/admin'
 
-import tourism from '@/components/tourism'
+import tourism from '@/components/tourism/tourism'
+import tourismDetail from '@/components/tourism/tourismDetail'
 
 import pjList from '@/components/project/pjList'
-import logistics from '@/components/project/eCommerce/logistics';//小程序项目物流接口编辑
+import pjEdit from '@/components/project/pjEdit'
+import pjDetail from '@/components/project/pjDetail'
 
 import techList from '@/components/Tech/techList'
 import techDetail from '@/components/Tech/techDetail'
@@ -41,7 +43,8 @@ export default new Router({
       component: Xerath,
       children:[
         {path: 'pjList', component: pjList},//项目
-        {path: 'logistics', component: logistics},//小程序项目物流接口
+        {path: 'pjEdit', component: pjEdit},//项目
+        {path: 'pjDetail', component: pjDetail},//项目
 
         {path: 'techList', component: techList},//技术点
         {path: 'techDetail', component: techDetail},//技术点详情
@@ -55,6 +58,7 @@ export default new Router({
         {path: 'cpEdit', component: cpEdit},//编辑组件
 
         {path: 'tourism', component: tourism},//旅游
+        {path: 'tourismDetail', component: tourismDetail},//旅游
 
         {path: 'noteMain', component: noteMain},//笔记列表
         {path: 'noteEdit', component: noteEdit},//编辑笔记
