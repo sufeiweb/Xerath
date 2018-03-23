@@ -53,7 +53,6 @@ router.post('/list', function (req, res, next) {
             callback(result);
         })
     }
-
     MongoClient.connect(Urls, function (err, db) {
         console.log('连接成功');
         selectData(db, function (result) {

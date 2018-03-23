@@ -29,6 +29,8 @@ import noteDetail from '@/components/Note/noteDetail'
 import diaryList from '@/components/diary/diaryList'
 import diaryEdit from '@/components/diary/diaryEdit'
 
+import reportMain from  '@/components/report/reportMain'
+
 Vue.use(Router)
 
 export default new Router({
@@ -66,6 +68,8 @@ export default new Router({
 
         {path: 'diaryList', component: diaryList},//日记列表
         {path: 'diaryEdit', component: diaryEdit},//日记编辑
+
+        {path: 'reportMain', component: reportMain},//报告列表
 
         {path: '*', redirect: 'home'}//其他路径都跳转到首页
       ]

@@ -65,6 +65,12 @@
           </router-link>
         </li>
         <li>
+          <router-link to="/Xerath/reportMain">
+            <i class="fa fa-files-o" aria-hidden="true"></i>
+            <span>日志报告</span>
+          </router-link>
+        </li>
+        <li>
           <router-link to="/Xerath/admin">
             <i class="fa fa-user-o" aria-hidden="true"></i>
             <span>开发人员</span>
@@ -108,6 +114,8 @@
     noteMain:'随笔',
     noteEdit:'编辑随笔',
     noteDetail:'随笔详情',
+
+    reportMain:'报告列表',
 
     diaryList:'日记',
     diaryEdit:'编辑日记'

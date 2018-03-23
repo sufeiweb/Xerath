@@ -110,18 +110,19 @@
         this.getComponentList(index)
       },
       DELItem(id){
+        let _this = this;
         toast.confirm({
           title: '提示',  // title 是可选的
           text: '确定要删除么？',
           onConfirm: function() {
             // 点击“确定”后的回调函数
-            this.$http.post('/notes/delete',{id:id})
+            _this.$http.post('/notes/delete',{id:id})
               .then((result)=>{
                 //成功
                 toast.message({
                   text:'删除成功！'
                 })
-                this.gopage(this.pageInfo.current);
+                _this.$router.go(0);
               }).catch(function (error) {
               //失败
               console.log(error)

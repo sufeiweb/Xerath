@@ -22,8 +22,8 @@ var ueditor = require("ueditor");
 var app = express();
 
 //跨域  后期删
-app.all('*', function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "http://localhost:8080"); //为了跨域保持session，所以指定地址，不能用*
+app.all('*', function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "http://localhost:18080"); //为了跨域保持session，所以指定地址，不能用*
     res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
     res.header("Access-Control-Allow-Headers", "X-Requested-With");
     res.header('Access-Control-Allow-Headers', 'Content-Type');
@@ -36,24 +36,24 @@ app.set('view engine', 'jade');
 
 
 //session
-var session=require('express-session');
+var session = require('express-session');
 app.use(session({
-    secret:'Xerath2018',               //设置 session 签名
-    name:'Xerath',
-    cookie:{maxAge:60*1000*60*12}, // 储存的时间 1小时
-    resave:false,             // 每次请求都重新设置session
-    saveUninitialized:true
+    secret: 'Xerath2018',               //设置 session 签名
+    name: 'Xerath',
+    cookie: { maxAge: 60 * 1000 * 60 * 12 }, // 储存的时间 1小时
+    resave: false,             // 每次请求都重新设置session
+    saveUninitialized: true
 }));
 
 // 验证用户登录
-app.use(function(req, res, next){
+app.use(function (req, res, next) {
     //后台请求
-    if(req.session.username){ //表示已经登录后台
+    if (req.session.username) { //表示已经登录后台
         next();
-    }else if( req.url.indexOf("login") >=0 || req.url.indexOf("logout") >= 0){
+    } else if (req.url.indexOf("login") >= 0 || req.url.indexOf("logout") >= 0) {
         //登入，登出不需要登录
         next();
-    }else{
+    } else {
         //next(); //TODO:这里是调试的时候打开的，以后需要删掉
         res.end('{"redirect":"true"}');
     };
@@ -79,10 +79,10 @@ app.use('/projects', projects);
 app.use('/backlogs', backlogs);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+app.use(function (req, res, next) {
+    var err = new Error('Not Found');
+    err.status = 404;
+    next(err);
 });
 
 app.use("/ueditor/ue", ueditor(path.join(__dirname, 'public'), function (req, res, next) {
@@ -110,14 +110,14 @@ app.use("/ueditor/ue", ueditor(path.join(__dirname, 'public'), function (req, re
 }));
 
 // error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+app.use(function (err, req, res, next) {
+    // set locals, only providing error in development
+    res.locals.message = err.message;
+    res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
+    // render the error page
+    res.status(err.status || 500);
+    res.render('error');
 });
 
 module.exports = app;
