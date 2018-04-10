@@ -71,6 +71,12 @@
           </router-link>
         </li>
         <li>
+          <router-link to="/Xerath/consigneeMain">
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+            <span>邮箱</span>
+          </router-link>
+        </li>
+        <li>
           <router-link to="/Xerath/admin">
             <i class="fa fa-user-o" aria-hidden="true"></i>
             <span>开发人员</span>
@@ -118,7 +124,8 @@
     reportMain:'报告列表',
 
     diaryList:'日记',
-    diaryEdit:'编辑日记'
+    diaryEdit:'编辑日记',
+    consigneeMain:'邮箱'
   };
 
   export default {

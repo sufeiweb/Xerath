@@ -77,6 +77,22 @@
             <span>标题：</span>
             <el-input v-model="iptTitle" placeholder="请输入标题"></el-input>
           </div>
+          <div class='title'>
+          <span>选择收件人：</span>
+          <el-select
+            v-model="useremail"
+            multiple
+            filterable
+            default-first-option
+            placeholder="请选择收件人">
+            <el-option
+              v-for="item in emailData"
+              :key="item.useremail"
+              :label="item.usernames?item.usernames:item.username"
+              :value="item.useremail">
+            </el-option>
+          </el-select>
+          </div>
           <div class="title">
             <span>内容：</span>
             <el-input
@@ -165,6 +181,8 @@
         completedData: [],//已完成数据
         cancelData: [],//已取消数据
         detailData: '',//详细数据
+        emailData:[],//邮箱数据
+        useremail:[],//收件人集合
       }
     },
     methods: {
@@ -177,6 +195,7 @@
         this.addStatus = !this.addStatus;
         if (num) {
           this.startTime = new Date();
+          this.getUserEmail()
         }
       },
       addSubmit() {
@@ -186,6 +205,7 @@
           iptTitle: this.iptTitle,
           iptContent: this.iptContent,
           iptRemark: this.iptRemark,
+          useremail:this.useremail,
           backlogStatus: 1,//待办事项 1，2未完成。3已完成，4已取消
         };
         this.$http.post('/backlogs/add', data).then(res => {
@@ -285,6 +305,14 @@
         setTimeout(this.getBacklogList(2), 1500);
         setTimeout(this.getBacklogList(3), 1500);
         setTimeout(this.getBacklogList(4), 1500);
+      },
+      getUserEmail(username){
+        let dataObj = username?{"username":username}:null;
+        this.$http.post('/backlogs/consignees',dataObj).then(res=>{
+          console.log(res.data.data)
+          this.emailData = res.data.data;
+          console.log(this.emailData);
+        })
       }
     },
     mounted: function () {

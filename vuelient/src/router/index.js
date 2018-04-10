@@ -31,6 +31,8 @@ import diaryEdit from '@/components/diary/diaryEdit'
 
 import reportMain from  '@/components/report/reportMain'
 
+import consigneeMain from  '@/components/consignee/consigneeMain'
+
 Vue.use(Router)
 
 export default new Router({
@@ -70,6 +72,8 @@ export default new Router({
         {path: 'diaryEdit', component: diaryEdit},//日记编辑
 
         {path: 'reportMain', component: reportMain},//报告列表
+
+        {path: 'consigneeMain', component: consigneeMain},//邮箱
 
         {path: '*', redirect: 'home'}//其他路径都跳转到首页
       ]
