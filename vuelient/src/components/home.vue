@@ -149,7 +149,7 @@
           <div class="titleD">备注：</div>
           <div class="remarkContent">
             <div v-for="item in detailData.iptRemark" class="itemsRemark">
-              <span>{{item.content}}</span>
+              <span class='text'>{{item.content}}</span>
               <span class="atTime">{{item.times | dateYMDHIS}}</span>
             </div>
           </div>
@@ -495,8 +495,13 @@
               display: flex;
               justify-content: space-between;
               align-items: center;
+              .text{
+                flex:1;
+              }
               .atTime{
+                width:160px;
                 color: #999;
+                text-align:center;
               }
             }
           }

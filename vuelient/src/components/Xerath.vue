@@ -24,62 +24,62 @@
       <ul class="sidenav">
         <li class="now">
           <router-link to="/Xerath/home">
-            <i class="fa fa-home" aria-hidden="true"></i>
-            <span>主页</span>
+            <!--<i class="fa fa-home" aria-hidden="true"></i>-->
+            <div>主页</div>
           </router-link>
         </li>
         <li>
           <router-link to="/Xerath/noteMain">
-            <i class="fa fa-file-code-o" aria-hidden="true"></i>
-            <span>随笔</span>
+            <!--// <i class="fa fa-file-code-o" aria-hidden="true"></i>-->
+            <div>随笔</div>
           </router-link>
         </li>
         <li>
           <router-link to="/Xerath/techList">
-            <i class="fa fa-hdd-o" aria-hidden="true"></i>
-            <span>技术</span>
+            <!--// <i class="fa fa-hdd-o" aria-hidden="true"></i>-->
+            <div>技术</div>
           </router-link>
         </li>
         <li>
           <router-link to="/Xerath/cpList">
-            <i class="fa fa-microchip" aria-hidden="true"></i>
-            <span>组件</span>
+            <!--// <i class="fa fa-microchip" aria-hidden="true"></i>-->
+            <div>组件</div>
           </router-link>
         </li>
         <li>
           <router-link to="/Xerath/pjList">
-            <i class="fa fa-briefcase" aria-hidden="true"></i>
-            <span>项目</span>
+            <!--// <i class="fa fa-briefcase" aria-hidden="true"></i>-->
+            <div>项目</div>
           </router-link>
         </li>
         <li>
           <router-link to="/Xerath/diaryList">
-            <i class="fa fa-file-word-o" aria-hidden="true"></i>
-            <span>日记</span>
+            <!--// <i class="fa fa-file-word-o" aria-hidden="true"></i>-->
+            <div>日记</div>
           </router-link>
         </li>
         <li>
           <router-link to="/Xerath/tourism">
-            <i class="fa fa-plane" aria-hidden="true"></i>
-            <span>旅游</span>
+            <!--// <i class="fa fa-plane" aria-hidden="true"></i>-->
+            <div>旅游</div>
           </router-link>
         </li>
         <li>
           <router-link to="/Xerath/reportMain">
-            <i class="fa fa-files-o" aria-hidden="true"></i>
-            <span>日志报告</span>
+            <!--// <i class="fa fa-files-o" aria-hidden="true"></i>-->
+            <div>日志报告</div>
           </router-link>
         </li>
         <li>
           <router-link to="/Xerath/consigneeMain">
-            <i class="fa fa-envelope" aria-hidden="true"></i>
-            <span>邮箱</span>
+            <!--// <i class="fa fa-envelope" aria-hidden="true"></i>-->
+            <div>邮箱</div>
           </router-link>
         </li>
         <li>
           <router-link to="/Xerath/admin">
-            <i class="fa fa-user-o" aria-hidden="true"></i>
-            <span>开发人员</span>
+            <!--// <i class="fa fa-user-o" aria-hidden="true"></i>-->
+            <div>开发人员</div>
           </router-link>
         </li>
       </ul>
@@ -185,7 +185,7 @@
   }
 
   .sidenav_box{
-    width: 80px;
+    width: 120px;
     box-shadow: 0 1px 5px rgba(13,62,73,0.2) ;
     position: fixed;
     left: 0;
@@ -193,6 +193,7 @@
     bottom: 0;
     background: #fff;
     z-index: 99;
+    overflow-y:auto
   }
   .sidenav_box .logo{
     width: 46px;
@@ -202,13 +203,14 @@
     margin-top: 30px;
   }
   .sidenav li{
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   .sidenav a{
+    color: #444;
     display: block;
     width: 56px;
-    height: 56px;
-    margin: 0 auto;
+    /*height: 56px;*/
+    padding-left: 10px;
     position: relative;
     cursor: pointer;
     opacity: 0.6;
@@ -217,10 +219,10 @@
   }
   .sidenav a i{
     font-size: 20px;
-    line-height: 56px;
+    /*line-height: 56px;*/
     text-align: center;
     display: block;
-    color: #566a80;
+    color: #444;
   }
   .sidenav a:hover{
     background: #f0f2f5;
@@ -343,7 +345,7 @@
   }
 
   .content{
-    margin: 20px 30px 0px 100px;
+    margin: 20px 30px 0px 140px;
     min-height: 300px;
     min-width: 700px;
   }
