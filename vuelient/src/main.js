@@ -25,8 +25,6 @@ Vue.use(ElementUI);
 
 import  axios from 'axios';
 axios.defaults.withCredentials = true;//跨域保存session有用
-const $API_BASE = 'http://localhost:3333';
-Vue.prototype.$API_BASE="http://localhost:3333";//打包的时候直接删掉，默认基础路径在这里配置
 axios.defaults.baseURL = 'http://localhost:3333';
 Vue.prototype.$http = axios;
 

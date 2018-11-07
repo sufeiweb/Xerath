@@ -30,6 +30,8 @@ import md5 from 'js-md5';
         loginText:"登录"
       }
     },
+    mounted(){
+    },
     methods:{
       login(){
           this.disablebtn = true;

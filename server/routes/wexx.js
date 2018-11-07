@@ -6,7 +6,7 @@ var ObjectId = require('mongodb').ObjectId;
 
 var mongodb = require('mongodb');
 var MongoClient = mongodb.MongoClient;
-var Urls = 'mongodb://localhost:27017/calssweb';
+var Urls = 'mongodb://localhost:27017/xerath';
 //添加
 router.post('/add', function(req, res, next) {
     MongoClient.connect(Urls,function (err,db) {

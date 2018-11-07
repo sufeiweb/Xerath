@@ -4,7 +4,7 @@ var assert = require('assert');
 var url = require('url');
 var host="localhost";
 var port="27017";
-var Urls = 'mongodb://localhost:27017/calssweb';
+var Urls = 'mongodb://localhost:27017/xerath';
 // classweb  ===> 自动创建一个
 
 
@@ -52,7 +52,7 @@ var find = function(db,collections,selector,fn){
             console.log(e);
             result = [];
         }
-
+        console.log(result,'返回数据')
         fn(result);
         db.close();
     });
